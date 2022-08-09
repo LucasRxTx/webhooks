@@ -1,0 +1,6 @@
+flask
+Flask-SQLAlchemy
+psycopg2
+sqlalchemy-stubs
+types-Flask
+typing_extensions
