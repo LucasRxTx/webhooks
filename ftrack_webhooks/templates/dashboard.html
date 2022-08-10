@@ -22,7 +22,8 @@
             <tr>
                 {% for key, value in event.items() %}
                 {% if key == "entity_id" %}
-                <td><a href="{{ url_for('event_dashboard_for_entity', entity_id=value) }}">{{ value }}</a></td>
+                <td><a href="{{ url_for('dashboard.event_dashboard_for_entity', entity_id=value) }}">{{ value }}</a>
+                </td>
                 {% else %}
                 <td>{{ value }}</td>
                 {% endif %}
