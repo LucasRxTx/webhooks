@@ -4,3 +4,4 @@ psycopg2
 sqlalchemy-stubs
 types-Flask
 typing_extensions
+sqlalchemy-utils
