@@ -15,7 +15,7 @@ __extentions_registry = (db,)
 """Add extention instances here to late initialize with flask app."""
 
 
-def register_app(app: flask.Flask):
+def register_app(app: flask.Flask) -> None:
     """Register all extentions with flask app."""
     for extention in __extentions_registry:
         extention.init_app(app)
