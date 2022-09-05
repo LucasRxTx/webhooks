@@ -10,7 +10,7 @@ from ftrack_webhooks.api import blueprints
 logger = getLogger(__name__)
 
 
-def create_app():
+def create_app() -> flask.Flask:
     app = flask.Flask(__name__)
     app.config.from_object("ftrack_webhooks.settings.FlaskConfig")
 
