@@ -8,7 +8,7 @@ ActionCreate = Literal["create"]
 ActionType = ActionUpdate | ActionCreate
 
 
-class EventLogItem(TypedDict):
+class EventLogItemDict(TypedDict):
     id: str
     entity_id: str
     entity_type: str
