@@ -1,6 +1,7 @@
 from ftrack_webhooks.models import EventLogItem
 from ftrack_webhooks.types import (
     CreateEventLogRequest,
+    EventLogItem,
     FTrackCreateEvent,
     FTrackUpdateEvent,
 )
@@ -20,7 +21,7 @@ def create_event_to_create_event_log_request(
     )
 
 
-def event_log_item_to_dictionary(event_log_item: EventLogItem) -> dict:
+def event_log_item_to_dictionary(event_log_item: EventLogItem) -> EventLogItemDict:
     """Map and ``EventLogItem`` to a plain dictionary."""
     return dict(
         id=event_log_item.id,
