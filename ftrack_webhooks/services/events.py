@@ -58,7 +58,7 @@ class EventService:
             if event.action == "update" or i == 0 and event.action == "create":
                 data.update(event.payload)
             else:
-                if not first_event:
+                if i != 0:
                     raise RuntimeError(
                         "Aggregate potentially corrupted.  "
                         "Got create action after update action.",
