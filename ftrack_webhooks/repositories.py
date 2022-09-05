@@ -9,7 +9,7 @@ from ftrack_webhooks.types import CreateEventLogRequest
 class EventRepositoryAbstract(abc.ABC):
     @abc.abstractmethod
     def get(self, event_id: str) -> EventLogItem | None:
-        ...
+        raise NotImplementedError()
 
     @abc.abstractmethod
     def get_all_entity_logs(
@@ -17,23 +17,23 @@ class EventRepositoryAbstract(abc.ABC):
         entity_id: str,
         stop: datetime | None = None,
     ) -> list[EventLogItem]:
-        ...
+        raise NotImplementedError()
 
     @abc.abstractmethod
     def get_all_event_logs(self) -> list[EventLogItem]:
-        ...
+        raise NotImplementedError()
 
     @abc.abstractmethod
     def create(self, data: CreateEventLogRequest) -> None:
-        ...
+        raise NotImplementedError()
 
     @abc.abstractmethod
     def delete_old_events(self) -> None:
-        ...
+        raise NotImplementedError()
 
     @abc.abstractmethod
     def save(self) -> None:
-        ...
+        raise NotImplementedError()
 
 
 class EventRepository(EventRepositoryAbstract):
