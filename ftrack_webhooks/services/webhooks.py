@@ -21,7 +21,6 @@ def authenticate(request: flask.Request, data: dict | None = None) -> bool:
 
     Check API keys, HMAC, ip whitelist, ect.
     """
-    data = data or None
     return True
 
 
@@ -31,7 +30,6 @@ def authroize(request: flask.Request, data: dict | None = None) -> bool:
     Can the given user have the roles and permissions to do what
     they are trying to do?
     """
-    data = data or None
     return True
 
 
