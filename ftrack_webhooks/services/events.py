@@ -54,9 +54,8 @@ class EventService:
             )
 
         data = {}
-        first_event = True
-        for event in events:
-            if event.action == "update" or first_event and event.action == "create":
+        for i, event in enumerate(events):
+            if event.action == "update" or i == 0 and event.action == "create":
                 data.update(event.payload)
             else:
                 if not first_event:
@@ -64,6 +63,5 @@ class EventService:
                         "Aggregate potentially corrupted.  "
                         "Got create action after update action.",
                     )
-            first_event = False
 
         return data
