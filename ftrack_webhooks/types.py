@@ -3,15 +3,29 @@ from __future__ import annotations
 from typing import Literal, TypedDict
 
 
+ActionUpdate = Literal["update"]
+ActionCreate = Literal["create"]
+ActionType = ActionUpdate | ActionCreate
+
+
+class EventLogItem(TypedDict):
+    id: str
+    entity_id: str
+    entity_type: str
+    action: ActionType
+    time: str
+    payload: dict
+
+
 class FTrackCreateEvent(TypedDict):
-    action: Literal["create"]
+    action: ActionCreate
     entity_type: str
     payload: dict
     time: str
 
 
 class FTrackUpdateEvent(TypedDict):
-    action: Literal["update"]
+    action: ActionUpdate
     entity_type: str
     id: str
     modified_fields: list[str]
@@ -24,7 +38,7 @@ FTrackEvent = FTrackCreateEvent | FTrackUpdateEvent
 
 class CreateEventLogRequest(TypedDict):
     id: str
-    action: str
+    action: ActionType
     entity_type: str
     payload: dict
     time: str
